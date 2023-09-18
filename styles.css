@@ -1,0 +1,197 @@
+/* General styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Nav bar styles */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8%;
+    background-color: #333;
+    color: #fff;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    margin: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 28px;
+}
+
+/* Image spot styles */
+.image-spot {
+    width: 100%;
+    height: auto;
+    max-height: 400px; /* You can adjust this value to control the maximum height of the image */
+    overflow: hidden; /* This will hide any overflowing parts of the image */
+}
+
+.image-spot img {
+    width: 100%;
+    height: auto;
+    display: block; /* This will remove any extra spacing below the image */
+}
+
+
+/* Search bar styles */
+/* Center the search bar horizontally */
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+/* Increase the width of the search bar */
+.search-bar .input-group {
+    max-width: 800px; /* Set the desired width */
+}
+
+/* Adjust the search input and button sizes if needed */
+.search-bar .form-control {
+    height: 50px; /* Set the desired height */
+}
+
+.search-bar .input-group-append .btn {
+    height: 50px; /* Set the desired height */
+}
+
+/* Profiles section styles */
+.profiles {
+    display: flex;
+    flex-wrap: wrap; /* This allows the profiles to wrap to a new row after reaching the container's width */
+    justify-content: space-between; /* This evenly distributes the profiles in each row */
+    gap: 20px; /* Spacing between profiles */
+    margin-left: 15px;
+}
+
+/* Profile container styles */
+.profile {
+    display: flex;
+    flex-basis: calc(33.33% - 20px); /* Each profile takes one-third of the container's width, minus the gap */
+    border: 2px solid black;
+    align-items: center;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    padding: 1px;
+}
+
+/* Profile picture styles */
+.profile-picture {
+    flex: 1;
+    width: 50%; /* Set the desired width for the profile picture container (half of the profile container) */
+    height: auto; /* Allow the picture to scale proportionally */
+    border-radius: 5px;
+    overflow: hidden; /* Hide any content that might overflow the box */
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* To ensure the entire image is visible within the box */
+}
+
+/* Profile description styles */
+.profile-description {
+    flex: 1; /* Set the description container to take the remaining space (half of the profile container) */
+    padding: 0 20px; /* Adjust padding as needed */
+    overflow: hidden; /* Hide any overflowing content */
+    position: relative; /* Required for positioning the read more link */
+}
+
+.profile-description-text {
+    height: 3.6em; /* Set the fixed container height in em or px (adjust as needed) */
+    line-height: 1.2em; /* Set the line height for proper truncation */
+    margin: 0;
+}
+
+.profile-name {
+    font-size: 26px; 
+    text-align: left; 
+    margin: 0;
+    position: relative;
+    bottom: 15px;
+}
+
+.read-more-link {
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    background-color: white;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.read-more-link:hover {
+    text-decoration: underline;
+}
+
+
+
+
+/* Style the filter options */
+.filters {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+#hourly-rate-value {
+    font-weight: bold;
+}
+
+/* Add this at the end of styles.css */
+.hidden {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Add this CSS at the end of styles.css */
+
+/* Profiles container styles */
+.profiles-container {
+    position: relative;
+}
+
+/* Next Page button styles */
+.next-page-button {
+    float: right;
+    margin: 20px;
+    z-index: 999; /* Ensure it's on top of other elements */
+}
+
+.next-page-button button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.next-page-button button:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: magenta;
+    width: 100%;
+    height: 550px;
+    position: relative;
+    top: 75px;
+    left: 0;
+}
