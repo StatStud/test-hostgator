@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Google Maps JavaScript API with Places Library Autocomplete Address Field</title> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Google Maps JavaScript library -->
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDxJFlHWuXM4_eJOUDZI8siEk84eUuclo8"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+
+<style>
+#search_input {font-size:18px;}
+.form-group{
+ margin-bottom: 10px;margin-top:50px;
+}
+.form-group label{
+ font-size:18px;
+ font-weight: 600;
+}
+.form-group input{
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.form-group input:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <p><h1>Google Maps JavaScript API with Places Library Autocomplete Address Field</h1></p>
+   <!-- Autocomplete location search input --> 
+   <div class="form-group">
+    <label>Location:</label>
+    <input type="text" class="form-control" id="search_input" placeholder="Type address..." />
+   </div>
+    <!-- Display latitude, longitude, and zip code -->
+    <div id="location_info">
+    <p>Latitude: <span id="latitude"></span></p>
+    <p>Longitude: <span id="longitude"></span></p>
+    <p>Zip Code: <span id="zip_code"></span></p>
+    </div>
+     </div>
+   </div>
+</div>
+<script>
+var searchInput = 'search_input';
+
+$(document).ready(function () {
+ var autocomplete;
+ autocomplete = new google.maps.places.Autocomplete((document.getElementById(searchInput)), {
+  types: ['geocode'],
+  componentRestrictions: {
+   country: "USA"
+  }
+ });
+ 
+ google.maps.event.addListener(autocomplete, 'place_changed', function () {
+        var nearPlace = autocomplete.getPlace();
+        if (nearPlace.geometry) {
+            var lat = nearPlace.geometry.location.lat();
+            var lng = nearPlace.geometry.location.lng();
+            var zipCode = extractZipCode(nearPlace.address_components);
+            
+            // Display on the HTML page
+            document.getElementById('latitude').textContent = lat;
+            document.getElementById('longitude').textContent = lng;
+            document.getElementById('zip_code').textContent = zipCode;
+            
+            // Log to the console
+            console.log('Latitude:', lat);
+            console.log('Longitude:', lng);
+            console.log('Zip Code:', zipCode);
+        }
+    });
+
+    function extractZipCode(addressComponents) {
+        for (var i = 0; i < addressComponents.length; i++) {
+            var types = addressComponents[i].types;
+            if (types.indexOf('postal_code') !== -1) {
+                return addressComponents[i].long_name;
+            }
+        }
+        return '';
+    }
+});
+</script>
+</body>
+</html>
