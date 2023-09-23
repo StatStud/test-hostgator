@@ -2,11 +2,11 @@
 // Database connection parameters
 $servername = "localhost";
 $username = "alejahel_demo";
-$password = "%ntRuZ&dn)iE";
+$dbpassword = "%ntRuZ&dn)iE";
 $dbname = "alejahel_demo";
 
 // Create a connection to the database
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $dbpassword, $dbname);
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
