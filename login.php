@@ -32,7 +32,8 @@ if ($stmt = $conn->prepare($query)) {
 
         // Verify the password
         // password_verify($password, $db_password)
-        if ($password == $db_password) {
+        // $password == $db_password
+        if (password_verify($password, $db_password)) {
             // Password is correct
             // You can set session variables here to indicate the user is logged in
             session_start();
