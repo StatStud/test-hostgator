@@ -6,10 +6,10 @@ $password = "%ntRuZ&dn)iE";
 $dbname = "alejahel_demo";
 
 // Create a connection to the database
-$mysqli = new mysqli("localhost", "username", "password", "your_database_name");
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-if ($mysqli->connect_error) {
-    die("Connection failed: " . $mysqli->connect_error);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
 
 // Get user input from the form
@@ -18,7 +18,7 @@ $password = $_POST['password'];
 
 // Prepare and execute a SQL query with prepared statements
 $query = "SELECT id, username, password FROM users WHERE username = ?";
-if ($stmt = $mysqli->prepare($query)) {
+if ($stmt = $conn->prepare($query)) {
     $stmt->bind_param("s", $username);
     $stmt->execute();
     $stmt->store_result();
@@ -49,5 +49,5 @@ if ($stmt = $mysqli->prepare($query)) {
     echo "Error in preparing the statement.";
 }
 
-$mysqli->close();
+$conn->close();
 ?>
