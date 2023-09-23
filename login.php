@@ -1,4 +1,7 @@
 <?php
+// Initialize the session
+session_start();
+
 // Database connection parameters
 $servername = "localhost";
 $username = "alejahel_demo";
@@ -27,9 +30,6 @@ if ($stmt = $conn->prepare($query)) {
         $stmt->bind_result($user_id, $db_username, $db_password);
         $stmt->fetch();
 
-        echo "Input Password: $password<br>";
-        echo "Database Password: $db_password<br>";
-
         // Verify the password
         // password_verify($password, $db_password)
         if ($password == $db_password) {
@@ -38,14 +38,23 @@ if ($stmt = $conn->prepare($query)) {
             session_start();
             $_SESSION['user_id'] = $user_id;
             $_SESSION['username'] = $db_username;
-            echo "Login successful. Redirecting..."; // You can redirect the user to a dashboard page.
+            // Redirect to the user dashboard page
+            header("Location: index.php");
+            exit();
         } else {
             // Password is incorrect
-            echo "Incorrect password. Please try again.";
+            // echo "Incorrect password. Please try again.";
+            $_SESSION['login_error'] = "Incorrect password. Please try again.";
+            header("Location: login.html"); // Redirect back to the login page
+            exit();            
         }
+        $stmt->close();
     } else {
         // User not found
-        echo "User not found.";
+        // echo "User not found.";
+        $_SESSION['login_error'] = "Error in preparing the statement.";
+        header("Location: login.html"); // Redirect back to the login page
+        exit();
     }
 
     $stmt->close();
