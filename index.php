@@ -1,6 +1,13 @@
 <?php
 session_start();
 ?>
+<?php
+// Check if the user is logged in
+if (!isset($_SESSION['user_id'])) {
+    header("Location: index.html"); // Redirect to index.html if not logged in
+    exit();
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,8 +32,7 @@ session_start();
                 echo '<li><a href="dashboard.php">Profile</a></li>';
             }
             ?>
-            <li><a href="#login">Login</a></li>
-            <li><a href="#signup">Sign Up</a></li>
+            <li><a href="logout.php">Logout</a></li>
             <li><a href="#about">About Us</a></li>
             <li><a href="#info">Info</a></li>
         </ul>
