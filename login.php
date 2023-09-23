@@ -27,6 +27,9 @@ if ($stmt = $conn->prepare($query)) {
         $stmt->bind_result($user_id, $db_username, $db_password);
         $stmt->fetch();
 
+        echo "Input Password: $password<br>";
+        echo "Database Password: $db_password<br>";
+
         // Verify the password
         if (password_verify($password, $db_password)) {
             // Password is correct

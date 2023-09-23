@@ -6,7 +6,7 @@ $dbpassword = "%ntRuZ&dn)iE";
 $dbname = "alejahel_demo";
 
 // Create a connection to the database
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $dbpassword, $dbname);
 
 // Check the connection
 if ($conn->connect_error) {
