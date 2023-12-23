@@ -1,0 +1,16 @@
+[17-Sep-2023 06:43:21 America/Chicago] PHP Warning:  Undefined array key "minPrice" in /home3/alejahel/repositories/test-hostgator/search.php on line 17
+[17-Sep-2023 06:43:21 America/Chicago] PHP Warning:  Undefined array key "maxPrice" in /home3/alejahel/repositories/test-hostgator/search.php on line 18
+[17-Sep-2023 06:43:21 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND' at line 1 in /home3/alejahel/repositories/test-hostgator/search.php:24
+Stack trace:
+#0 /home3/alejahel/repositories/test-hostgator/search.php(24): mysqli->query('SELECT * FROM m...')
+#1 {main}
+  thrown in /home3/alejahel/repositories/test-hostgator/search.php on line 24
+[23-Sep-2023 16:18:50 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'username'@'localhost' (using password: YES) in /home3/alejahel/repositories/test-hostgator/login.php:9
+Stack trace:
+#0 /home3/alejahel/repositories/test-hostgator/login.php(9): mysqli->__construct('localhost', 'username', Object(SensitiveParameterValue), 'your_database_n...')
+#1 {main}
+  thrown in /home3/alejahel/repositories/test-hostgator/login.php on line 9
+[23-Sep-2023 16:52:16 America/Chicago] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/alejahel/repositories/test-hostgator/login.php on line 38
+[23-Sep-2023 17:22:10 America/Chicago] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/alejahel/repositories/test-hostgator/login.php on line 38
+[23-Sep-2023 17:24:13 America/Chicago] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/alejahel/repositories/test-hostgator/login.php on line 38
+[23-Sep-2023 17:31:32 America/Chicago] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/alejahel/repositories/test-hostgator/index.php on line 16
