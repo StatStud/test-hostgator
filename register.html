@@ -19,9 +19,41 @@
                     <label for="password">Password</label>
                     <input type="password" id="password" name="password" placeholder="Enter your password" required>
                 </div>
-                <button type="submit">Login</button>
+                <div id="error-message" style="color: red; display: none;"></div>
+                <button type="submit">Register</button>
             </form>
         </div>
     </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#registrationForm').submit(function (e) {
+                e.preventDefault();
+                var username = $('#username').val();
+
+                $.ajax({
+                    type: 'POST',
+                    url: 'check_username.php', // Replace with your PHP file handling the username check
+                    data: { username: username },
+                    success: function (response) {
+                        if (response === 'Username available') {
+                            // If username is available, submit the form
+                            $('#registrationForm')[0].submit();
+                        } else {
+                            // Show error message if username is already taken
+                            $('#error-message').text(response).show();
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.error(xhr.responseText);
+                        $('#error-message').text('Error occurred. Please try again.').show();
+                    }
+                });
+            });
+        });
+    </script>
+
 </body>
 </html>

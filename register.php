@@ -20,6 +20,7 @@ if ($stmt_check = $conn->prepare($check_query)) {
     $result = $stmt_check->get_result();
 
     if ($result->num_rows > 0) {
+        http_response_code(400);
         echo "Username already taken. Please choose another username.";
         $stmt_check->close();
         $conn->close();
@@ -28,6 +29,7 @@ if ($stmt_check = $conn->prepare($check_query)) {
 
     $stmt_check->close();
 } else {
+    http_response_code(500);
     echo "Error in preparing the statement for username check.";
     $conn->close();
     exit(); // Stop further execution
