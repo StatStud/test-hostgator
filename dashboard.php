@@ -11,20 +11,41 @@ if (!isset($_SESSION['user_id'])) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>User Profile</title>
-  <!-- Add your CSS links or stylesheets here -->
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Nav bar -->
+    <nav>
+        <ul>
+            <?php
+            // Start the session
+            session_start();
+
+            // Check if the user is logged in
+            if (isset($_SESSION['user_id'])) {
+                // User is logged in, display the "Profile" tab
+                echo '<li><a href="dashboard.php">Profile</a></li>';
+            }
+            ?>
+            <li><a href="logout.php">Logout</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#info">Info</a></li>
+        </ul>
+    </nav>
+
+
   <div class="profile-container">
     <div class="profile-picture">
       <!-- User's profile picture -->
-      <img src="path/to/profile_picture.jpg" alt="Profile Picture">
+      <img src="faces/dan.png" alt="Profile Picture">
     </div>
     <div class="profile-details">
       <!-- Generic details -->
-      <h2>User's Name</h2>
+      <h2><?php echo $_SESSION['username']; ?></h2>
       <p>Email: user@example.com</p>
       <!-- Add more generic details here -->
     </div>
