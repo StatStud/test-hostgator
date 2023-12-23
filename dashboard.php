@@ -21,16 +21,7 @@ if (!isset($_SESSION['user_id'])) {
     <!-- Nav bar -->
     <nav>
         <ul>
-            <?php
-            // Start the session
-            session_start();
-
-            // Check if the user is logged in
-            if (isset($_SESSION['user_id'])) {
-                // User is logged in, display the "Profile" tab
-                echo '<li><a href="dashboard.php">Profile</a></li>';
-            }
-            ?>
+            <li><a href="index.php">Home</a></li>
             <li><a href="logout.php">Logout</a></li>
             <li><a href="#about">About Us</a></li>
             <li><a href="#info">Info</a></li>
