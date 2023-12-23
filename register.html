@@ -35,7 +35,7 @@
 
                 $.ajax({
                     type: 'POST',
-                    url: 'register.php', // Replace with your PHP file handling the username check
+                    url: 'check_username.php', // Replace with your PHP file handling the username check
                     data: { username: username },
                     success: function (response) {
                         if (response === 'Username available') {
