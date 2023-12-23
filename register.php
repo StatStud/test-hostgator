@@ -12,6 +12,30 @@ if ($conn->connect_error) {
 $username = $_POST['username'];
 $password = $_POST['password'];
 
+// Check if the username already exists
+$check_query = "SELECT * FROM users WHERE username = ?";
+if ($stmt_check = $conn->prepare($check_query)) {
+    $stmt_check->bind_param("s", $username);
+    $stmt_check->execute();
+    $result = $stmt_check->get_result();
+
+    if ($result->num_rows > 0) {
+        echo "Username already taken. Please choose another username.";
+        $stmt_check->close();
+        $conn->close();
+        exit(); // Stop further execution
+    }
+
+    $stmt_check->close();
+} else {
+    echo "Error in preparing the statement for username check.";
+    $conn->close();
+    exit(); // Stop further execution
+}
+
+
+
+
 // Hash the password
 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
