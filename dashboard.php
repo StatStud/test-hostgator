@@ -19,7 +19,7 @@ if (!isset($_SESSION['user_id'])) {
 </head>
 <body>
     <!-- Nav bar -->
-    <nav>
+    <nav style="margin-bottom: 100px;">
         <ul>
             <li><a href="index.php">Home</a></li>
             <li><a href="logout.php">Logout</a></li>
