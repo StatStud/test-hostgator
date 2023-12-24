@@ -34,7 +34,7 @@ if (!isset($_SESSION['user_id'])) {
       <!-- User's profile picture -->
       <img src="faces/dan.png" alt="Profile Picture" style = "width: 200px; height: 200px; margin: 20px; border-radius: 50%;">
     </div>
-    <div class="profile-details">
+    <div class="profile-details" style="margin: 20px;">
       <!-- Generic details -->
       <h2><?php echo $_SESSION['username']; ?></h2>
       <p>Email: user@example.com</p>
