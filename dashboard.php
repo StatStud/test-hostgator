@@ -40,7 +40,7 @@ if (!isset($_SESSION['user_id'])) {
       <p>Email: user@example.com</p>
       <!-- Add more generic details here -->
     </div>
-    <div class="advanced-settings">
+    <div class="advanced-settings" style="margin: 20px;">
       <!-- Tabs for advanced settings -->
       <ul class="tabs">
         <li><a href="#tab1">Settings 1</a></li>
