@@ -32,7 +32,7 @@ if (!isset($_SESSION['user_id'])) {
   <div class="profile-container">
     <div class="profile-picture">
       <!-- User's profile picture -->
-      <img src="faces/dan.png" alt="Profile Picture">
+      <img src="faces/dan.png" alt="Profile Picture" style = "width: 200px; height: 200px">
     </div>
     <div class="profile-details">
       <!-- Generic details -->
