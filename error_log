@@ -14,3 +14,28 @@ Stack trace:
 [23-Sep-2023 17:22:10 America/Chicago] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/alejahel/repositories/test-hostgator/login.php on line 38
 [23-Sep-2023 17:24:13 America/Chicago] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/alejahel/repositories/test-hostgator/login.php on line 38
 [23-Sep-2023 17:31:32 America/Chicago] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/alejahel/repositories/test-hostgator/index.php on line 16
+[23-Dec-2023 14:25:18 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry 'yeet' for key 'unique_username' in /home3/alejahel/repositories/test-hostgator/register.php:22
+Stack trace:
+#0 /home3/alejahel/repositories/test-hostgator/register.php(22): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home3/alejahel/repositories/test-hostgator/register.php on line 22
+[23-Dec-2023 14:26:11 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry 'yeet' for key 'unique_username' in /home3/alejahel/repositories/test-hostgator/register.php:22
+Stack trace:
+#0 /home3/alejahel/repositories/test-hostgator/register.php(22): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home3/alejahel/repositories/test-hostgator/register.php on line 22
+[23-Dec-2023 15:21:42 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry 'yeet' for key 'unique_username' in /home3/alejahel/repositories/test-hostgator/register.php:22
+Stack trace:
+#0 /home3/alejahel/repositories/test-hostgator/register.php(22): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home3/alejahel/repositories/test-hostgator/register.php on line 22
+[23-Dec-2023 18:15:23 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry 'yeet' for key 'unique_username' in /home3/alejahel/repositories/test-hostgator/register.php:22
+Stack trace:
+#0 /home3/alejahel/repositories/test-hostgator/register.php(22): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home3/alejahel/repositories/test-hostgator/register.php on line 22
+[23-Dec-2023 18:15:31 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry 'yeet' for key 'unique_username' in /home3/alejahel/repositories/test-hostgator/register.php:22
+Stack trace:
+#0 /home3/alejahel/repositories/test-hostgator/register.php(22): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home3/alejahel/repositories/test-hostgator/register.php on line 22
