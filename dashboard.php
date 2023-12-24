@@ -19,7 +19,7 @@ if (!isset($_SESSION['user_id'])) {
 </head>
 <body>
     <!-- Nav bar -->
-    <nav style="margin-bottom: 100px;">
+    <nav>
         <ul>
             <li><a href="index.php">Home</a></li>
             <li><a href="logout.php">Logout</a></li>
@@ -29,7 +29,7 @@ if (!isset($_SESSION['user_id'])) {
     </nav>
 
 
-  <div class="profile-container">
+  <div class="profile-container" style="margin-top: 75px">
     <div class="profile-picture">
       <!-- User's profile picture -->
       <img src="faces/dan.png" alt="Profile Picture" style = "width: 200px; height: 200px">
