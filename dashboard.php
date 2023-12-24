@@ -47,11 +47,11 @@ if (!isset($_SESSION['user_id'])) {
         <li><a href="#tab2">Settings 2</a></li>
         <!-- Add more tabs as needed -->
       </ul>
-      <div class="tab-content" id="tab1">
+      <div class="tab-content" id="tab1" style="margin: 20px;">
         <!-- Content for Settings 1 -->
         <p>Advanced settings content 1 goes here.</p>
       </div>
-      <div class="tab-content" id="tab2">
+      <div class="tab-content" id="tab2" style="margin: 20px;">
         <!-- Content for Settings 2 -->
         <p>Advanced settings content 2 goes here.</p>
       </div>
