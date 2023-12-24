@@ -39,7 +39,7 @@ if (!isset($_SESSION['user_id'])) {
     </nav>
 
     <!-- Image spot -->
-    <div class="image-spot">
+    <div class="image-spot" style="margin-top: 75;">
         <img src="faces/cover.png">
     </div>
 
