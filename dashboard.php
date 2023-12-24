@@ -29,7 +29,7 @@ if (!isset($_SESSION['user_id'])) {
     </nav>
 
 
-  <div class="profile-container" style="margin-top: 75px">
+  <div class="profile-container">
     <div class="profile-picture">
       <!-- User's profile picture -->
       <img src="faces/dan.png" alt="Profile Picture" style = "width: 200px; height: 200px">
