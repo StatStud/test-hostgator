@@ -7,19 +7,28 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-// // Get the profile picture path for the logged-in user
-// $username = $_SESSION['username'];
-// $query = "SELECT profile_picture_path FROM users WHERE username = ?";
-// if ($stmt = $conn->prepare($query)) {
-//     $stmt->bind_param("i", $username);
-//     $stmt->execute();
-//     $stmt->bind_result($profile_picture_path);
-//     $stmt->fetch();
-//     $stmt->close();
-// } else {
-//     echo "Error in preparing the statement.";
-// }
-$profile_picture_path = "faces/dan.png"
+include 'config.php'; // Include the configuration file
+
+// Establish a database connection (replace with your credentials)
+$conn = new mysqli($servername, $username, $dbpassword, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Get the profile picture path for the logged-in user
+$username = $_SESSION['username'];
+$query = "SELECT profile_picture_path FROM users WHERE username = ?";
+if ($stmt = $conn->prepare($query)) {
+    $stmt->bind_param("i", $username);
+    $stmt->execute();
+    $stmt->bind_result($profile_picture_path);
+    $stmt->fetch();
+    $stmt->close();
+} else {
+    echo "Error in preparing the statement.";
+}
+// $profile_picture_path = "faces/dan.png"
 
 ?>
 
