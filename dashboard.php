@@ -7,18 +7,19 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-// Get the profile picture path for the logged-in user
-$username = $_SESSION['username'];
-$query = "SELECT profile_picture_path FROM users WHERE username = ?";
-if ($stmt = $conn->prepare($query)) {
-    $stmt->bind_param("i", $username);
-    $stmt->execute();
-    $stmt->bind_result($profile_picture_path);
-    $stmt->fetch();
-    $stmt->close();
-} else {
-    echo "Error in preparing the statement.";
-}
+// // Get the profile picture path for the logged-in user
+// $username = $_SESSION['username'];
+// $query = "SELECT profile_picture_path FROM users WHERE username = ?";
+// if ($stmt = $conn->prepare($query)) {
+//     $stmt->bind_param("i", $username);
+//     $stmt->execute();
+//     $stmt->bind_result($profile_picture_path);
+//     $stmt->fetch();
+//     $stmt->close();
+// } else {
+//     echo "Error in preparing the statement.";
+// }
+$profile_picture_path = "faces/dan.png"
 
 ?>
 
