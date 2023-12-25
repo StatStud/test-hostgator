@@ -7,19 +7,19 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-// Get the profile picture path for the logged-in user
-$user_id = $_SESSION['user_id'];
-$query = "SELECT profile_picture_path FROM users WHERE user_id = ?";
-if ($stmt = $conn->prepare($query)) {
-    $stmt->bind_param("i", $user_id);
-    $stmt->execute();
-    $stmt->bind_result($profile_picture_path);
-    $stmt->fetch();
-    $stmt->close();
-} else {
-    // Handle the database error here
-    // For example: echo "Error in preparing the statement.";
-}
+// // Get the profile picture path for the logged-in user
+// $user_id = $_SESSION['user_id'];
+// $query = "SELECT profile_picture_path FROM users WHERE user_id = ?";
+// if ($stmt = $conn->prepare($query)) {
+//     $stmt->bind_param("i", $user_id);
+//     $stmt->execute();
+//     $stmt->bind_result($profile_picture_path);
+//     $stmt->fetch();
+//     $stmt->close();
+// } else {
+//     // Handle the database error here
+//     // For example: echo "Error in preparing the statement.";
+// }
 
 ?>
 
@@ -47,7 +47,8 @@ if ($stmt = $conn->prepare($query)) {
   <div class="profile-container" style="margin-top: 75px">
     <div class="profile-picture">
       <!-- User's profile picture -->
-      <img src="<?php echo $profile_picture_path; ?>" alt="Profile Picture" style="width: 200px; height: 200px; margin: 20px; border-radius: 50%;">
+      <!-- <img src="<?php echo $profile_picture_path; ?>" alt="Profile Picture" style="width: 200px; height: 200px; margin: 20px; border-radius: 50%;"> -->
+      <h1><?php echo $user_id;?></h1>
     </div>
     <div class="profile-details" style="margin: 20px;">
       <!-- Generic details -->
