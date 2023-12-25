@@ -1,14 +1,3 @@
-<?php
-session_start();
-?>
-<?php
-// Check if the user is logged in
-if (!isset($_SESSION['user_id'])) {
-    header("Location: index.html"); // Redirect to index.html if not logged in
-    exit();
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,9 +19,12 @@ if (!isset($_SESSION['user_id'])) {
             if (isset($_SESSION['user_id'])) {
                 // User is logged in, display the "Profile" tab
                 echo '<li><a href="dashboard.php">Profile</a></li>';
+                echo '<li><a href="logout.php">Logout</a></li>';
+            } else {
+                echo '<li><a href="login.html">Login</a></li>';
+                echo '<li><a href="register.html">Sign Up</a></li>';
             }
             ?>
-            <li><a href="logout.php">Logout</a></li>
             <li><a href="#about">About Us</a></li>
             <li><a href="#info">Info</a></li>
         </ul>
