@@ -61,6 +61,7 @@ if ($stmt = $conn->prepare($query)) {
     <div class="profile-details" style="margin: 20px;">
       <!-- Generic details -->
       <h2><?php echo $_SESSION['username']; ?></h2>
+      <p><?php echo $query ?></p>
       <p><?php echo $profile_picture_path ?></p>
       <p>Email: user@example.com</p>
       <!-- Add more generic details here -->
