@@ -1,3 +1,5 @@
 # .gitignore
 config.php
 pull.php
+.htaccess
+error_log

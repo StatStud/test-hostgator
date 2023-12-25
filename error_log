@@ -39,3 +39,36 @@ Stack trace:
 #0 /home3/alejahel/repositories/test-hostgator/register.php(22): mysqli_stmt->execute()
 #1 {main}
   thrown in /home3/alejahel/repositories/test-hostgator/register.php on line 22
+[25-Dec-2023 14:57:43 America/Chicago] PHP Warning:  Undefined variable $conn in /home3/alejahel/repositories/test-hostgator/dashboard.php on line 13
+[25-Dec-2023 14:57:43 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home3/alejahel/repositories/test-hostgator/dashboard.php:13
+Stack trace:
+#0 {main}
+  thrown in /home3/alejahel/repositories/test-hostgator/dashboard.php on line 13
+[25-Dec-2023 15:00:13 America/Chicago] PHP Warning:  Undefined variable $profile_picture_path in /home3/alejahel/repositories/test-hostgator/dashboard.php on line 50
+[25-Dec-2023 15:00:13 America/Chicago] PHP Warning:  Undefined variable $user_id in /home3/alejahel/repositories/test-hostgator/dashboard.php on line 51
+[25-Dec-2023 15:01:51 America/Chicago] PHP Warning:  Undefined variable $conn in /home3/alejahel/repositories/test-hostgator/dashboard.php on line 13
+[25-Dec-2023 15:01:51 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home3/alejahel/repositories/test-hostgator/dashboard.php:13
+Stack trace:
+#0 {main}
+  thrown in /home3/alejahel/repositories/test-hostgator/dashboard.php on line 13
+[25-Dec-2023 15:02:04 America/Chicago] PHP Warning:  Undefined variable $conn in /home3/alejahel/repositories/test-hostgator/dashboard.php on line 13
+[25-Dec-2023 15:02:04 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home3/alejahel/repositories/test-hostgator/dashboard.php:13
+Stack trace:
+#0 {main}
+  thrown in /home3/alejahel/repositories/test-hostgator/dashboard.php on line 13
+[25-Dec-2023 15:02:49 America/Chicago] PHP Warning:  Undefined variable $conn in /home3/alejahel/repositories/test-hostgator/dashboard.php on line 13
+[25-Dec-2023 15:02:49 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home3/alejahel/repositories/test-hostgator/dashboard.php:13
+Stack trace:
+#0 {main}
+  thrown in /home3/alejahel/repositories/test-hostgator/dashboard.php on line 13
+[25-Dec-2023 15:03:00 America/Chicago] PHP Warning:  Undefined variable $conn in /home3/alejahel/repositories/test-hostgator/dashboard.php on line 13
+[25-Dec-2023 15:03:00 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home3/alejahel/repositories/test-hostgator/dashboard.php:13
+Stack trace:
+#0 {main}
+  thrown in /home3/alejahel/repositories/test-hostgator/dashboard.php on line 13
+[25-Dec-2023 15:03:40 America/Chicago] PHP Warning:  Undefined variable $conn in /home3/alejahel/repositories/test-hostgator/dashboard.php on line 13
+[25-Dec-2023 15:03:40 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home3/alejahel/repositories/test-hostgator/dashboard.php:13
+Stack trace:
+#0 {main}
+  thrown in /home3/alejahel/repositories/test-hostgator/dashboard.php on line 13
+[25-Dec-2023 15:40:00 America/Chicago] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/alejahel/repositories/test-hostgator/index.php on line 16
