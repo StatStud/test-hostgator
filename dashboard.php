@@ -17,8 +17,7 @@ if ($stmt = $conn->prepare($query)) {
     $stmt->fetch();
     $stmt->close();
 } else {
-    // Handle the database error here
-    // For example: echo "Error in preparing the statement.";
+    echo "Error in preparing the statement.";
 }
 
 ?>
