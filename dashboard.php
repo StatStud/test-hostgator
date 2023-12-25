@@ -20,7 +20,7 @@ if ($conn->connect_error) {
 $username = $_SESSION['username'];
 $query = "SELECT profile_picture_path FROM users WHERE username = ?";
 if ($stmt = $conn->prepare($query)) {
-    $stmt->bind_param("i", $username);
+    $stmt->bind_param("s", $username);
     $stmt->execute();
     $stmt->bind_result($profile_picture_path);
     $stmt->fetch();
