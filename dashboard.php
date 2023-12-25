@@ -9,7 +9,7 @@ if (!isset($_SESSION['user_id'])) {
 
 // Get the profile picture path for the logged-in user
 $username = $_SESSION['username'];
-$query = "SELECT profile_picture_path FROM users WHERE user_id = ?";
+$query = "SELECT profile_picture_path FROM users WHERE username = ?";
 if ($stmt = $conn->prepare($query)) {
     $stmt->bind_param("i", $username);
     $stmt->execute();
