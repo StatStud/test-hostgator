@@ -1,3 +1,8 @@
+<?php
+// Start the session
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,9 +17,6 @@
     <nav>
         <ul>
             <?php
-            // Start the session
-            session_start();
-
             // Check if the user is logged in
             if (isset($_SESSION['user_id'])) {
                 // User is logged in, display the "Profile" tab
