@@ -34,6 +34,7 @@
     <div class="image-spot" style="margin-top: 60px;">
         <img src="faces/cover.png">
     </div>
+    <h1>This is .php</h1>
 
     <!-- Filter options -->
     <div class="filters mt-4">
