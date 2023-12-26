@@ -90,8 +90,8 @@ nav a {
 /* Profile picture styles */
 .profile-picture {
     flex: 1;
-    width: 75%; /* Set the desired width for the profile picture container (half of the profile container) */
-    height: auto; /* Allow the picture to scale proportionally */
+    width: 50%; /* Set the desired width for the profile picture container (half of the profile container) */
+    height: 100%; /* Allow the picture to scale proportionally */
     border-radius: 5px;
     overflow: hidden; /* Hide any content that might overflow the box */
 }
