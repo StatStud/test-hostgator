@@ -218,7 +218,7 @@ session_start();
             <img src="faces/sofia.png">
         </div>
         <div class="profile-description">
-            <p class="profile-name"> <strong>Dave</strong> </p>
+            <p class="profile-name"> <strong>Sofia</strong> </p>
             <p style="margin: 0px;"> <i>Health and Safety Consultant</i> </p>
             <p> Hello, I'm Sofia! I bring my expertise in health and safety to ensure our cleaning practices prioritize your well-being while maintaining top-notch standards. </p>
         </div>
