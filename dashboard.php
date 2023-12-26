@@ -140,7 +140,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   </div>
 
 <!-- New container for displaying user attributes -->
-<div class="user-attributes" style="margin: 20px; width: 20px">
+<div class="user-attributes" style="margin: 20px; width: 60px">
     <h3>User Attributes</h3>
     <?php
     $reveal_query = "SELECT distance, languages, hourly_rate, bio, verified FROM users WHERE username = ?";
