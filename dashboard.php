@@ -143,11 +143,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <div class="user-attributes" style="margin: 20px;">
     <h3>User Attributes</h3>
     <?php
-    $reveal_query = "SELECT distance, languages, hourly_rate, verified FROM users WHERE username = ?";
+    $reveal_query = "SELECT distance, languages, hourly_rate, bio, verified FROM users WHERE username = ?";
     if ($stmt = $conn->prepare($reveal_query)) {
         $stmt->bind_param("s", $username);
         $stmt->execute();
-        $stmt->bind_result($distance, $languages, $hourly_rate, $verified);
+        $stmt->bind_result($distance, $languages, $hourly_rate, $bio, $verified);
         $stmt->fetch();
         $stmt->close();
         ?>
