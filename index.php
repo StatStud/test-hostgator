@@ -149,7 +149,7 @@ session_start();
             <img src="faces/jen.png">
         </div>
         <div class="profile-description">
-            <p> Hey there, I'm Jen! I orchestrate our cleaning operations to ensure everything runs seamlessly. My passion lies in delivering top-notch service and creating a positive experience for everyone involved. </p>
+            <p> Hey there, I'm Jen! I oversee our teams to guarantee that every home gets the five-star treatment. I focus on training and quality to maintain our high standards. </p>
         </div>
     </div>
 
@@ -189,7 +189,7 @@ session_start();
             <img src="faces/tyrone.png">
         </div>
         <div class="profile-description">
-            <p> Staff Cleaning and operations manager. </p>
+            <p> Hi, I'm Ty! I design and implement our training programs. I'm passionate about empowering our team with the skills needed to deliver exceptional service. </p>
         </div>
     </div>
 
@@ -200,7 +200,7 @@ session_start();
             <img src="faces/sofia.png">
         </div>
         <div class="profile-description">
-            <p> Staff Cleaning and operations manager. </p>
+            <p> Hello, I'm Sofia! I bring my expertise in health and safety to ensure our cleaning practices prioritize your well-being while maintaining top-notch standards. </p>
         </div>
     </div>
 
@@ -211,7 +211,7 @@ session_start();
             <img src="faces/james.png">
         </div>
         <div class="profile-description">
-            <p> Staff Cleaning and operations manager. </p>
+            <p> Hello, I'm James! I'm here to make sure your experience with us is fantastic. Whether it's scheduling or resolving concerns, I'm dedicated to providing top-notch customer support. </p>
         </div>
     </div>
 
