@@ -30,29 +30,80 @@ if ($stmt = $conn->prepare($query)) {
 }
 
 
-// Handling form submission for modifying settings
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // Get the user ID from the session
   $username = $_SESSION['username'];
 
-  // Update user settings
-  if (isset($_POST['distance']) && isset($_POST['languages']) && isset($_POST['hourly_rate'])) {
-      $distance = $_POST['distance'];
-      $languages = implode(", ", $_POST['languages']); // Convert array to comma-separated string
-      $hourly_rate = $_POST['hourly_rate'];
+  // Initialize variables
+  $update_query = "UPDATE users SET ";
+  $params = array();
+  $types = '';
 
-      // Update the user settings in the database
-      $update_query = "UPDATE users SET distance = ?, languages = ?, hourly_rate = ? WHERE username = ?";
-      if ($stmt = $conn->prepare($update_query)) {
-          $stmt->bind_param("isis", $distance, $languages, $hourly_rate, $username);
-          $stmt->execute();
-          $stmt->close();
-          // Optionally, you can add a success message here
-      } else {
-          echo "Error updating user settings.";
-      }
+  // Check and build the query for each field
+  if (isset($_POST['distance']) && $_POST['distance'] !== '') {
+      $update_query .= "distance = ?, ";
+      $params[] = $_POST['distance'];
+      $types .= 'i';
+  }
+
+  if (isset($_POST['languages'])) {
+      $languages = implode(", ", $_POST['languages']);
+      $update_query .= "languages = ?, ";
+      $params[] = $languages;
+      $types .= 's';
+  }
+
+  if (isset($_POST['hourly_rate']) && $_POST['hourly_rate'] !== '') {
+      $update_query .= "hourly_rate = ?, ";
+      $params[] = $_POST['hourly_rate'];
+      $types .= 'i';
+  }
+
+  // Remove trailing comma and space from the query
+  $update_query = rtrim($update_query, ", ");
+
+  // Complete the query
+  $update_query .= " WHERE username = ?";
+
+  // Add username parameter and its type
+  $params[] = $username;
+  $types .= 's';
+
+  // Prepare and execute the statement
+  if ($stmt = $conn->prepare($update_query)) {
+      $stmt->bind_param($types, ...$params);
+      $stmt->execute();
+      $stmt->close();
+      // Optionally, add a success message here
+  } else {
+      echo "Error updating user settings.";
   }
 }
+
+
+// // Handling form submission for modifying settings
+// if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+//   // Get the user ID from the session
+//   $username = $_SESSION['username'];
+
+//   // Update user settings
+//   if (isset($_POST['distance']) && isset($_POST['languages']) && isset($_POST['hourly_rate'])) {
+//       $distance = $_POST['distance'];
+//       $languages = implode(", ", $_POST['languages']); // Convert array to comma-separated string
+//       $hourly_rate = $_POST['hourly_rate'];
+
+//       // Update the user settings in the database
+//       $update_query = "UPDATE users SET distance = ?, languages = ?, hourly_rate = ? WHERE username = ?";
+//       if ($stmt = $conn->prepare($update_query)) {
+//           $stmt->bind_param("isis", $distance, $languages, $hourly_rate, $username);
+//           $stmt->execute();
+//           $stmt->close();
+//           // Optionally, you can add a success message here
+//       } else {
+//           echo "Error updating user settings.";
+//       }
+//   }
+// }
 
 ?>
 
