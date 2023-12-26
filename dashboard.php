@@ -81,6 +81,30 @@ if ($stmt = $conn->prepare($query)) {
       <!-- Add more tab content as needed -->
     </div>
   </div>
+
+
+<!-- Form for modifying settings -->
+  <div class="advanced-settings" style="margin: 20px;">
+      <h3>Modify Settings</h3>
+      <form action="" method="POST">
+          <label for="distance">Distance:</label>
+          <input type="number" id="distance" name="distance" placeholder="Enter distance"><br><br>
+
+          <label for="languages">Languages:</label>
+          <select id="languages" name="languages[]" multiple>
+              <option value="English">English</option>
+              <option value="Spanish">Spanish</option>
+          </select><br><br>
+
+          <label for="hourly_rate">Hourly Rate:</label>
+          <input type="number" id="hourly_rate" name="hourly_rate" placeholder="Enter hourly rate"><br><br>
+
+          <input type="submit" value="Save Changes">
+      </form>
+  </div>
+
+
+
   <!-- Add your scripts or JavaScript links here -->
   <!-- <script src="scripts.js"></script> -->
 </body>
