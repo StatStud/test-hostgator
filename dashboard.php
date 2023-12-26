@@ -42,6 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $hourly_rate = $_POST['hourly_rate'];
 
       // Update the user settings in the database
+      echo "here are the results for username:" . $username;
       $update_query = "UPDATE users SET distance = ?, languages = ?, hourly_rate = ? WHERE username = ?";
       if ($stmt = $conn->prepare($update_query)) {
           $stmt->bind_param("issi", $distance, $languages, $hourly_rate, $username);
