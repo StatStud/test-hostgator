@@ -2,11 +2,7 @@
 // Initialize the session
 session_start();
 
-// Database connection parameters
-$servername = "localhost";
-$username = "alejahel_demo";
-$dbpassword = "%ntRuZ&dn)iE";
-$dbname = "alejahel_demo";
+include 'config.php'; // Include the configuration file
 
 // Create a connection to the database
 $conn = new mysqli($servername, $username, $dbpassword, $dbname);
