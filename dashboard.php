@@ -244,9 +244,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <!-- Password change section -->
 <div class="pwd-change" style="margin: 20px;">
-      <h3>Modify Settings</h3>
-      <form action="" method="POST">
       <h3>Change Password</h3>
+      <form action="" method="POST">
         <label for="old_password">Old Password:</label>
         <input type="password" id="old_password" name="old_password" placeholder="Enter old password"><br><br>
 
