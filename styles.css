@@ -85,6 +85,12 @@ nav a {
     background-color: #f9f9f9;
     border-radius: 5px;
     padding: 1px;
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Scale up the profile on hover */
+.profile:hover {
+    transform: scale(1.5); /* Enlarge by 50% */
 }
 
 /* Profile picture styles */
