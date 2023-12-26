@@ -107,8 +107,9 @@ session_start();
             <img src="faces/dave.png">
         </div>
         <div class="profile-description">
+            <p class="profile-name"> <strong>Dave</strong> </p>
+            <p style="margin: 0px;"> <i>Operations Manager</i> </p>
             <p>Hey there, I'm Dave! I orchestrate our cleaning operations to ensure everything runs seamlessly. My passion lies in delivering top-notch service and creating a positive experience for everyone involved.</p>
-            
         </div>
     </div>
 
@@ -118,6 +119,8 @@ session_start();
             <img src="faces/steve.png">
         </div>
         <div class="profile-description">
+            <p class="profile-name"> <strong>Steve</strong> </p>
+            <p style="margin: 0px;"> <i>Business Development Consultant</i> </p>
             <p> Hi, I'm Steve! I leverage industry insights to drive our business growth. My goal is to expand our reach and enhance our position in the home cleaning market.</p>
         </div>
     </div>
@@ -128,6 +131,8 @@ session_start();
             <img src="faces/sonya.png">
         </div>
         <div class="profile-description">
+            <p class="profile-name"> <strong>Sonya</strong> </p>
+            <p style="margin: 0px;"> <i>Marketing Coordinator</i> </p>
             <p> Hey there, I'm Sonya! I lead our marketing efforts to showcase our amazing services. Through storytelling, I make sure our brand resonates with potential clients. </p>
         </div>
     
@@ -140,6 +145,8 @@ session_start();
             <img src="faces/dan.png">
         </div>
         <div class="profile-description">
+            <p class="profile-name"> <strong>Dan</strong> </p>
+            <p style="margin: 0px;"> <i>Associate Cleaner</i> </p>
             <p> Hola, I'm Dan! With over ten years of experience, I've perfected the art of transforming spaces. I take pride in my meticulous work and love seeing the smiles on clients' faces after a thorough clean. </p>
         </div>
     </div>
@@ -150,6 +157,8 @@ session_start();
             <img src="faces/jen.png">
         </div>
         <div class="profile-description">
+            <p class="profile-name"> <strong>Jen</strong> </p>
+            <p style="margin: 0px;"> <i>Cleaning Supervisor</i> </p>
             <p> Hey there, I'm Jen! I oversee our teams to guarantee that every home gets the five-star treatment. I focus on training and quality to maintain our high standards. </p>
         </div>
     </div>
@@ -160,6 +169,8 @@ session_start();
             <img src="faces/scott.png">
         </div>
         <div class="profile-description">
+            <p class="profile-name"> <strong>Scott</strong> </p>
+            <p style="margin: 0px;"> <i>Cleaning Technician</i> </p>
             <p> Hola, I'm Scott! I'm your go-to guy for specialized cleaning needs. From carpets to unique surfaces, I bring expertise and a friendly approach to every job. </p>
         </div>
     </div>
@@ -170,6 +181,8 @@ session_start();
             <img src="faces/lauren.png">
         </div>
         <div class="profile-description">
+            <p class="profile-name"> <strong>Lauren</strong> </p>
+            <p style="margin: 0px;"> <i>Quality Assurance Specialist</i> </p>
             <p> Hi, I'm Lauren! I meticulously inspect every nook and cranny to ensure our high standards are met. Your satisfaction with our service is my top priority.</p>
         </div>
     </div>
@@ -180,6 +193,8 @@ session_start();
             <img src="faces/kendra.png">
         </div>
         <div class="profile-description">
+            <p class="profile-name"> <strong>Kendra</strong> </p>
+            <p style="margin: 0px;"> <i>Cleaning Specialist</i> </p>
             <p> Hi, I'm Kendra! I specialize in eco-friendly cleaning methods. My aim is to keep your space sparkling clean while being kind to the environment. </p>
         </div>
     </div>
@@ -190,6 +205,8 @@ session_start();
             <img src="faces/tyrone.png">
         </div>
         <div class="profile-description">
+            <p class="profile-name"> <strong>Ty</strong> </p>
+            <p style="margin: 0px;"> <i>Training Coordinator</i> </p>
             <p> Hi, I'm Ty! I design and implement our training programs. I'm passionate about empowering our team with the skills needed to deliver exceptional service. </p>
         </div>
     </div>
@@ -201,6 +218,8 @@ session_start();
             <img src="faces/sofia.png">
         </div>
         <div class="profile-description">
+            <p class="profile-name"> <strong>Dave</strong> </p>
+            <p style="margin: 0px;"> <i>Health and Safety Consultant</i> </p>
             <p> Hello, I'm Sofia! I bring my expertise in health and safety to ensure our cleaning practices prioritize your well-being while maintaining top-notch standards. </p>
         </div>
     </div>
@@ -212,6 +231,8 @@ session_start();
             <img src="faces/james.png">
         </div>
         <div class="profile-description">
+            <p class="profile-name"> <strong>James</strong> </p>
+            <p style="margin: 0px;"> <i>Customer Service Representative</i> </p>
             <p> Hello, I'm James! I'm here to make sure your experience with us is fantastic. Whether it's scheduling or resolving concerns, I'm dedicated to providing top-notch customer support. </p>
         </div>
     </div>
