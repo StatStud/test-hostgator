@@ -107,6 +107,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
   </div>
 
+<!-- New container for displaying user attributes -->
+<div class="user-attributes" style="margin: 20px;">
+    <h3>User Attributes</h3>
+    <?php
+    $reveal_query = "SELECT distance, languages, hourly_rate, verified FROM users WHERE username = ?";
+    if ($stmt = $conn->prepare($reveal_query)) {
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $stmt->bind_result($distance, $languages, $hourly_rate, $verified);
+        $stmt->fetch();
+        $stmt->close();
+        ?>
+        <p>Distance: <?php echo $distance; ?></p>
+        <p>Languages: <?php echo $languages; ?></p>
+        <p>Hourly Rate: <?php echo $hourly_rate; ?></p>
+        <p>Verified: <?php echo $verified; ?></p>
+        <?php
+    } else {
+        echo "Error fetching user attributes.";
+    }
+    ?>
+</div>
+
 
 <!-- Form for modifying settings -->
   <div class="advanced-settings" style="margin: 20px;">
