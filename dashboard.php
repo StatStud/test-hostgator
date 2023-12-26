@@ -206,7 +206,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ?>
         <p> <strong>Distance:</strong> <?php echo $distance; ?></p>
         <p> <strong>Languages:</strong> <?php echo $languages; ?></p>
-        <p> <strong>Hourly Rate:</strong> <?php echo $hourly_rate; ?></p>
+        <p> <strong>Hourly Rate:</strong> $<?php echo $hourly_rate; ?>/hr</p>
         <p> <strong>Bio:</strong> <?php echo $bio; ?></p>
         <p> <strong>Verified:</strong> <?php echo $verified == 0 ? "Unverified" : "Verified"; ?></p>
         <?php
