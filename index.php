@@ -11,6 +11,21 @@ session_start();
     <title>My Web App</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Custom CSS */
+        .btn-primary {
+            background-color: blue;
+            border-color: blue;
+            border-radius: 0 0.25rem 0.25rem 0;
+        }
+
+        .btn-primary:hover {
+            background-color: darkblue;
+            border-color: darkblue;
+        }
+
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <!-- Nav bar -->
@@ -84,13 +99,13 @@ session_start();
             </div>
 
             <div class="form-group col-md-4">
-            <label>&nbsp;</label>
-            <div class="input-group">
-                    <div class="input-group-append">
-                        <button class="btn btn-primary rounded-right" type="button">
-                            <i class="fas fa-search text-white"></i> Search
-                        </button>
-                    </div>
+                <label>&nbsp;</label>
+                <div class="input-group">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary rounded-right" type="button">
+                                <i class="fas fa-search text-white"></i> Search
+                            </button>
+                        </div>
                 </div>
             </div>
 
