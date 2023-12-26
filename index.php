@@ -106,7 +106,7 @@ session_start();
             <img src="faces/dave.png">
         </div>
         <div class="profile-description">
-            <p>Senior Cleaning Consultant at WaterWorks Inc. Senior Cleaning Consultant at WaterWorks Inc. Senior Cleaning Consultant at WaterWorks Inc. Senior Cleaning Consultant at WaterWorks Inc.</p>
+            <p>Hey there, I'm Dave! I orchestrate our cleaning operations to ensure everything runs seamlessly. My passion lies in delivering top-notch service and creating a positive experience for everyone involved.</p>
             
         </div>
     </div>
@@ -117,7 +117,7 @@ session_start();
             <img src="faces/steve.png">
         </div>
         <div class="profile-description">
-            <p> Cleaning Consultant at WaterWorks Inc.</p>
+            <p> Hi, I'm Steve! I leverage industry insights to drive our business growth. My goal is to expand our reach and enhance our position in the home cleaning market.</p>
         </div>
     </div>
 
@@ -127,7 +127,7 @@ session_start();
             <img src="faces/sonya.png">
         </div>
         <div class="profile-description">
-            <p> Staff Cleaning and operations manager. </p>
+            <p> Hey there, I'm Sonya! I lead our marketing efforts to showcase our amazing services. Through storytelling, I make sure our brand resonates with potential clients. </p>
         </div>
     
     </div>
@@ -139,7 +139,7 @@ session_start();
             <img src="faces/dan.png">
         </div>
         <div class="profile-description">
-            <p> Staff Cleaning and operations manager. </p>
+            <p> Hola, I'm Dan! With over ten years of experience, I've perfected the art of transforming spaces. I take pride in my meticulous work and love seeing the smiles on clients' faces after a thorough clean. </p>
         </div>
     </div>
 
@@ -149,7 +149,7 @@ session_start();
             <img src="faces/jen.png">
         </div>
         <div class="profile-description">
-            <p> Staff Cleaning and operations manager. </p>
+            <p> Hey there, I'm Jen! I orchestrate our cleaning operations to ensure everything runs seamlessly. My passion lies in delivering top-notch service and creating a positive experience for everyone involved. </p>
         </div>
     </div>
 
@@ -159,7 +159,7 @@ session_start();
             <img src="faces/scott.png">
         </div>
         <div class="profile-description">
-            <p> Staff Cleaning and operations manager. </p>
+            <p> Hola, I'm Scott! I'm your go-to guy for specialized cleaning needs. From carpets to unique surfaces, I bring expertise and a friendly approach to every job. </p>
         </div>
     </div>
 
@@ -169,7 +169,7 @@ session_start();
             <img src="faces/lauren.png">
         </div>
         <div class="profile-description">
-            <p> Staff Cleaning and operations manager. </p>
+            <p> Hi, I'm Lauren! I meticulously inspect every nook and cranny to ensure our high standards are met. Your satisfaction with our service is my top priority.</p>
         </div>
     </div>
 
@@ -179,7 +179,7 @@ session_start();
             <img src="faces/kendra.png">
         </div>
         <div class="profile-description">
-            <p> Staff Cleaning and operations manager. </p>
+            <p> Hi, I'm Kendra! I specialize in eco-friendly cleaning methods. My aim is to keep your space sparkling clean while being kind to the environment. </p>
         </div>
     </div>
 
