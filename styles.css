@@ -169,6 +169,7 @@ nav a {
 /* Profiles container styles */
 .profiles-container {
     position: relative;
+    margin: 25px;
 }
 
 /* Next Page button styles */
