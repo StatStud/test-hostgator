@@ -20,6 +20,16 @@ $query = "INSERT INTO users (username, password) VALUES (?, ?)";
 if ($stmt = $conn->prepare($query)) {
     $stmt->bind_param("ss", $username, $hashed_password);
     if ($stmt->execute()) {
+
+        // Update last login time
+        $currentDateTime = date("Y-m-d H:i:s");
+        $updateQuery = "UPDATE users SET last_login = ? WHERE username = ?";
+        if ($updateStmt = $conn->prepare($updateQuery)) {
+            $updateStmt->bind_param("ss", $currentDateTime, $username);
+            $updateStmt->execute();
+            $updateStmt->close();
+        }
+
         echo "Registration successful. You can now <a href='login.html'>log in</a>.";
     } else {
         echo "Registration failed. Please try again later.";
