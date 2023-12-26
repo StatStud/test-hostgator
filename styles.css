@@ -121,7 +121,7 @@ nav a {
     text-align: left; 
     margin: 0;
     position: relative;
-    bottom: 100px;
+    bottom: 1px;
 }
 
 .read-more-link {
