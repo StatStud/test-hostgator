@@ -29,6 +29,31 @@ if ($stmt = $conn->prepare($query)) {
     echo "Error in preparing the statement.";
 }
 
+
+// Handling form submission for modifying settings
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  // Get the user ID from the session
+  $username = $_SESSION['username'];
+
+  // Update user settings
+  if (isset($_POST['distance']) && isset($_POST['languages']) && isset($_POST['hourly_rate'])) {
+      $distance = $_POST['distance'];
+      $languages = implode(", ", $_POST['languages']); // Convert array to comma-separated string
+      $hourly_rate = $_POST['hourly_rate'];
+
+      // Update the user settings in the database
+      $update_query = "UPDATE users SET distance = ?, languages = ?, hourly_rate = ? WHERE username = ?";
+      if ($stmt = $conn->prepare($update_query)) {
+          $stmt->bind_param("issi", $distance, $languages, $hourly_rate, $username);
+          $stmt->execute();
+          $stmt->close();
+          // Optionally, you can add a success message here
+      } else {
+          echo "Error updating user settings.";
+      }
+  }
+}
+
 ?>
 
 <!DOCTYPE html>
