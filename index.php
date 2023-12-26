@@ -98,7 +98,7 @@ session_start();
                 </select>
             </div>
 
-            <div class="form-group col-md-4 d-flex align-items-center justify-content-center">
+            <div class="form-group col-md-4" style="display: flex; justify-content: center;">
                 <label>&nbsp;</label>
                 <div class="input-group">
                         <div class="input-group-append">
