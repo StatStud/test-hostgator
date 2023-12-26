@@ -90,7 +90,7 @@ nav a {
 
 /* Scale up the profile on hover */
 .profile:hover {
-    transform: scale(1.5); /* Enlarge by 50% */
+    transform: scale(1.1); /* Enlarge by 10% */
 }
 
 /* Profile picture styles */
