@@ -73,7 +73,7 @@ nav a {
     flex-wrap: wrap; /* This allows the profiles to wrap to a new row after reaching the container's width */
     justify-content: space-between; /* This evenly distributes the profiles in each row */
     gap: 20px; /* Spacing between profiles */
-    margin-left: 15px;
+    margin: 20px;
 }
 
 /* Profile container styles */
@@ -169,8 +169,6 @@ nav a {
 /* Profiles container styles */
 .profiles-container {
     position: relative;
-    margin: 25px;
-    padding: 25px;
 }
 
 /* Next Page button styles */
