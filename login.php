@@ -31,6 +31,16 @@ if ($stmt = $conn->prepare($query)) {
         // $password == $db_password
         if (password_verify($password, $db_password)) {
             // Password is correct
+
+            // Update last login time
+            $currentDateTime = date("Y-m-d H:i:s");
+            $updateQuery = "UPDATE users SET last_login = ? WHERE username = ?";
+            if ($updateStmt = $conn->prepare($updateQuery)) {
+                $updateStmt->bind_param("ss", $currentDateTime, $username);
+                $updateStmt->execute();
+                $updateStmt->close();
+            }
+
             // You can set session variables here to indicate the user is logged in
             session_start();
             $_SESSION['user_id'] = $user_id;
