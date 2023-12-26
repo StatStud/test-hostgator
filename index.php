@@ -82,17 +82,20 @@ session_start();
                     </optgroup>
                 </select>
             </div>
-        </div>
-        <div class="form-group col-md-4">
-        <label>&nbsp;</label>
-        <div class="input-group">
-            <div class="input-group-append">
-                <button class="btn btn-primary rounded-right" type="button">
-                    <i class="fas fa-search text-white"></i> Search
-                </button>
+
+            <div class="form-group col-md-4">
+            <label>&nbsp;</label>
+            <div class="input-group">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary rounded-right" type="button">
+                            <i class="fas fa-search text-white"></i> Search
+                        </button>
+                    </div>
+                </div>
             </div>
+
         </div>
-        </div>
+
     </div>
 
 
