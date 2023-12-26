@@ -95,7 +95,7 @@ session_start();
             <img src="faces/ann.png">
         </div>
         <div class="profile-description">
-            <p class="profile-name""> <strong>Ann</strong> </p>
+            <p class="profile-name"> <strong>Ann</strong> </p>
             <p> Hi, I'm Ann! I'm thrilled to be part of the team, diving into the world of home cleaning. My goal is to make every corner sparkle and ensure that your space feels brand new! </p>
         </div>
     </div>
