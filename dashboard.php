@@ -122,7 +122,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <p>Distance: <?php echo $distance; ?></p>
         <p>Languages: <?php echo $languages; ?></p>
         <p>Hourly Rate: <?php echo $hourly_rate; ?></p>
-        <p>Verified: <?php echo $verified; ?></p>
+        <p>Verified: <?php echo $verified == 0 ? "Unverified" : "Verified"; ?></p>
         <?php
     } else {
         echo "Error fetching user attributes.";
