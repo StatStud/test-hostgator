@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
     <div class="profile-details" style="margin: 20px;">
       <!-- Generic details -->
-      <h2><?php echo $_SESSION['username']; ?></h2>
+      <h2> Welcome, <?php echo $_SESSION['username']; ?></h2>
       <p>Email: user@example.com</p>
       <!-- Add more generic details here -->
     </div>
