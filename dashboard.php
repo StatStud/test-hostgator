@@ -140,7 +140,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   </div>
 
 <!-- New container for displaying user attributes -->
-<div class="user-attributes" style="margin: 20px;">
+<div class="user-attributes" style="margin: 20px; width: 20px">
     <h3>User Attributes</h3>
     <?php
     $reveal_query = "SELECT distance, languages, hourly_rate, bio, verified FROM users WHERE username = ?";
@@ -151,11 +151,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->fetch();
         $stmt->close();
         ?>
-        <p>Distance: <?php echo $distance; ?></p>
-        <p>Languages: <?php echo $languages; ?></p>
-        <p>Hourly Rate: <?php echo $hourly_rate; ?></p>
-        <p>Bio: <?php echo $bio; ?></p>
-        <p>Verified: <?php echo $verified == 0 ? "Unverified" : "Verified"; ?></p>
+        <p> <strong>Distance:</strong> <?php echo $distance; ?></p>
+        <p> <strong>Languages:</strong> <?php echo $languages; ?></p>
+        <p> <strong>Hourly Rate:</strong> <?php echo $hourly_rate; ?></p>
+        <p> <strong>Bio:</strong> <?php echo $bio; ?></p>
+        <p> <strong>Verified:</strong> <?php echo $verified == 0 ? "Unverified" : "Verified"; ?></p>
         <?php
     } else {
         echo "Error fetching user attributes.";
