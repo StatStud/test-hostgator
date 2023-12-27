@@ -41,24 +41,65 @@
             bottom: 20px;
             right: 20px;
         }
+
+        .range-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .range-values {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
     </style>
+
+    <script>
+            window.onload = function() {
+                const minRate = 0; // Set your minimum hourly rate
+                const maxRate = 350; // Set your maximum hourly rate
+
+                const slider = document.getElementById('hourly_rate');
+                const outputMin = document.getElementById('minHourlyRate');
+                const outputMax = document.getElementById('maxHourlyRate');
+
+                outputMin.innerHTML = minRate;
+                outputMax.innerHTML = maxRate;
+
+                slider.min = minRate;
+                slider.max = maxRate;
+
+                slider.oninput = function() {
+                    const mid = this.value;
+                    const gradient = `linear-gradient(to right, #ff5722 0%, #ff5722 ${((mid - minRate) / (maxRate - minRate)) * 100}%, #f2f2f2 ${((mid - minRate) / (maxRate - minRate)) * 100}%, #f2f2f2 100%)`;
+
+                    outputMin.innerHTML = this.value;
+                    outputMax.innerHTML = maxRate;
+
+                    this.style.background = gradient;
+                };
+            };
+    </script>
 </head>
 <body>
 
 <div class="filter-bar">
     <!-- Filter form -->
     <form action="" method="GET">
-        <label for="hourly_rate">Filter by hourly_rate:</label>
-        <input type="range" name="hourly_rate" id="hourly_rate" min="0" max="350" step="1">
+        <div class="range-container">
+            <div class="range-values">
+                <span>Min Hourly Rate: $<span id="minHourlyRate"></span></span>
+                <span>Max Hourly Rate: $<span id="maxHourlyRate"></span></span>
+            </div>
+            <input type="range" name="hourly_rate" id="hourly_rate">
+        </div>
 
         <label for="distance">Filter by distance:</label>
         <select name="distance" id="distance">
             <option value="">Select Distance</option>
+            <option value="1">Within 1 mile</option>
             <option value="5">Within 5 miles</option>
             <option value="10">Within 10 miles</option>
-            <option value="15">Within 15 miles</option>
-            <option value="30">Within 30 miles</option>
-            <option value="50">Within 50 miles</option>
             <!-- Add more distance options as needed -->
         </select>
         
@@ -97,7 +138,7 @@
         // Hourly rate filter
         if(isset($_GET['hourly_rate']) && !empty($_GET['hourly_rate'])) {
             $hourly_rate = $_GET['hourly_rate'];
-            $sql .= " hourly_rate <= $hourly_rate";
+            $sql .= " hourly_rate BETWEEN 0 AND $hourly_rate";
         }
 
         // Distance filter
@@ -136,7 +177,7 @@
             // Hourly rate filter
             if(isset($_GET['hourly_rate']) && !empty($_GET['hourly_rate'])) {
                 $hourly_rate = $_GET['hourly_rate'];
-                $sql .= " hourly_rate <= $hourly_rate";
+                $sql .= " hourly_rate BETWEEN 0 AND $hourly_rate";
             }
 
             // Distance filter
