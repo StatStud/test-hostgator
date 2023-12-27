@@ -127,54 +127,58 @@
             align-items: stretch;
             width: 100%;
         }
+
+        .double-slider {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .double-slider input[type="range"] {
+            width: 80%;
+            margin-bottom: 20px;
+        }
+
+        .double-slider .input-box {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+        }
+
+        .double-slider .input-box input {
+            width: 45px;
+            text-align: center;
+        }
     </style>
 
     <script>
         window.onload = function () {
-        slideMin();
-        slideMax();
+            const minVal = document.querySelector(".min-val");
+            const maxVal = document.querySelector(".max-val");
+            const sliderMinValue = parseInt(minVal.min);
+            const sliderMaxValue = parseInt(maxVal.max);
+            const range = document.querySelector(".slider-track");
+
+            // Update range input values on page load
+            updateSliderValues();
+
+            minVal.addEventListener("input", function () {
+                updateSliderValues();
+            });
+
+            maxVal.addEventListener("input", function () {
+                updateSliderValues();
+            });
+
+            function updateSliderValues() {
+                const minValue = parseInt(minVal.value);
+                const maxValue = parseInt(maxVal.value);
+
+                range.style.left = `${((minValue - sliderMinValue) / (sliderMaxValue - sliderMinValue)) * 100}%`;
+                range.style.right = `${100 - ((maxValue - sliderMinValue) / (sliderMaxValue - sliderMinValue)) * 100}%`;
+            }
         };
-
-        const minVal = document.querySelector(".min-val");
-        const maxVal = document.querySelector(".max-val");
-        const priceInputMin = document.querySelector(".min-input");
-        const priceInputMax = document.querySelector(".max-input");
-        const minTooltip = document.querySelector(".min-tooltip");
-        const maxTooltip = document.querySelector(".max-tooltip");
-        const minGap = 1500;
-        const range = document.querySelector(".slider-track");
-        const sliderMinValue = parseInt(minVal.min);
-        const sliderMaxValue = parseInt(maxVal.max);
-
-        function slideMin() {
-        let gap = parseInt(maxVal.value) - parseInt(minVal.value);
-        }
-
-        function slideMax() {
-        let gap = parseInt(maxVal.value) - parseInt(minVal.value);
-        }
-
-        function setArea() {
-        range.style.left = `${
-            ((minVal.value - sliderMinValue) / (sliderMaxValue - sliderMinValue)) * 100
-        }%`;
-
-        range.style.left = (minVal.value / sliderMaxValue) * 100 + "%";
-        minTooltip.style.left = (minVal.value / sliderMaxValue) * 100 + "%";
-        range.style.right = `${
-            100 -
-            ((maxVal.value - sliderMinValue) / (sliderMaxValue - sliderMinValue)) * 100
-        }%`;
-        maxTooltip.style.right = 100 - (maxVal.value / sliderMaxValue) * 100 + "%";
-        }
-
-        function setMinInput() {
-        let minPrice = parseInt(priceInputMin.value);
-        }
-
-        function setMaxInput() {
-        let maxPrice = parseInt(priceInputMax.value);
-        }
     </script>
 </head>
 <body>
@@ -182,16 +186,18 @@
 <div class="filter-bar">
     <!-- Filter form -->
     <form action="" method="GET">
-        <div class="double-slider-box">
-            <h3 class="range-title">Price Range Slider</h3>
+        <div class="double-slider">
+            <h3 class="range-title">Hourly Rate Range</h3>
             <div class="range-slider">
-
+                <div class="slider-track"></div>
+                <input type="range" class="min-val" min="0" max="350" value="0">
+                <input type="range" class="max-val" min="0" max="350" value="350">
             </div>
             <div class="input-box">
-
+                <input type="text" class="min-input" readonly>
+                <input type="text" class="max-input" readonly>
             </div>
         </div>
-
 
         <label for="distance">Filter by distance:</label>
         <select name="distance" id="distance">
