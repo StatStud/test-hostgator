@@ -49,14 +49,20 @@
     <!-- Filter form -->
     <form action="" method="GET">
         <label for="hourly_rate">Filter by hourly_rate:</label>
-        <input type="number" name="hourly_rate" id="hourly_rate">
+        <input type="range" name="hourly_rate" id="hourly_rate" min="0" max="350" step="1">
 
         <label for="distance">Filter by distance:</label>
-        <input type="number" name="distance" id="distance">
+        <select name="distance" id="distance">
+            <option value="">Select Distance</option>
+            <option value="5">Within 5 miles</option>
+            <option value="10">Within 10 miles</option>
+            <option value="15">Within 15 miles</option>
+            <option value="30">Within 30 miles</option>
+            <option value="50">Within 50 miles</option>
+            <!-- Add more distance options as needed -->
+        </select>
         
         <input type="submit" value="Filter">
-        <a href="maybe.php" style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 5px; transition: background-color 0.3s ease;"
-   onmouseover="this.style.backgroundColor='#0056b3'" onmouseout="this.style.backgroundColor='#007bff'">Reset</a>
     </form>
 </div>
 
@@ -163,6 +169,8 @@
     $conn->close();
     ?>
 </div>
+
+<a href="#top" class="next-page">Next Page</a>
 
 </body>
 </html>
