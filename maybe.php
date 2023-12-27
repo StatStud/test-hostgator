@@ -55,6 +55,8 @@
         <input type="number" name="distance" id="distance">
         
         <input type="submit" value="Filter">
+        <a href="alpha.alejandromichel.org/maybe.php" style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 5px; transition: background-color 0.3s ease;"
+   onmouseover="this.style.backgroundColor='#0056b3'" onmouseout="this.style.backgroundColor='#007bff'">Reset</a>
     </form>
 </div>
 
