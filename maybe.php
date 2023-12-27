@@ -42,43 +42,152 @@
             right: 20px;
         }
 
-        .range-container {
-            display: flex;
-            align-items: center;
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
 
-        .range-values {
+        body {
+            height: 100vh;
+            display: grid;
+            background-color: #0b0f19;
+            place-items: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .double-slider-box {
+            background-color: #fff;
+            padding: 20px 40px;
+            border-radius: 10px;
+            max-width: 20rem;
+        }
+
+        h3.range-title {
+            margin-bottom: 4rem;
+        }
+
+        .range-slider {
+            position: relative;
+            width: 100%;
+            height: 5px;
+            margin: 30px 0;
+            background-color: #8a8a8a;
+        }
+
+        .slider-track {
+            height: 100%;
+            position: absolute;
+            background-color: #fe696a;
+        }
+
+        .range-slider input {
+            position: absolute;
+            width: 100%;
+            background: none;
+            pointer-events: none;
+            top: 50%;
+            transform: translateY(-50%);
+            appearance: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            border: 3px solid #FFF;
+            background: #FFF;
+            pointer-events: auto;
+            appearance: none;
+            cursor: pointer;
+            box-shadow: 0 .125rem .5625rem -0.125rem rgba(0, 0, 0, .25);
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            border: 3px solid #FFF;
+            background: #FFF;
+            pointer-events: auto;
+            -moz-appearance: none;
+            cursor: pointer;
+            box-shadow: 0 .125rem .5625rem -0.125rem rgba(0, 0, 0, .25);
+        }
+
+
+        .input-box {
             display: flex;
-            justify-content: space-between;
+        }
+
+        .min-box,
+        .max-box {
+            width: 50%;
+        }
+
+        .min-box {
+            padding-right: .5rem;
+            margin-right: .5rem;
+        }
+
+        .input-wrap {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: stretch;
             width: 100%;
         }
     </style>
 
     <script>
-            window.onload = function() {
-                const minRate = 0; // Set your minimum hourly rate
-                const maxRate = 350; // Set your maximum hourly rate
+        window.onload = function () {
+        slideMin();
+        slideMax();
+        };
 
-                const slider = document.getElementById('hourly_rate');
-                const outputMin = document.getElementById('minHourlyRate');
-                const outputMax = document.getElementById('maxHourlyRate');
+        const minVal = document.querySelector(".min-val");
+        const maxVal = document.querySelector(".max-val");
+        const priceInputMin = document.querySelector(".min-input");
+        const priceInputMax = document.querySelector(".max-input");
+        const minTooltip = document.querySelector(".min-tooltip");
+        const maxTooltip = document.querySelector(".max-tooltip");
+        const minGap = 1500;
+        const range = document.querySelector(".slider-track");
+        const sliderMinValue = parseInt(minVal.min);
+        const sliderMaxValue = parseInt(maxVal.max);
 
-                outputMin.innerHTML = minRate;
-                outputMax.innerHTML = maxRate;
+        function slideMin() {
+        let gap = parseInt(maxVal.value) - parseInt(minVal.value);
+        }
 
-                slider.min = minRate;
-                slider.max = maxRate;
+        function slideMax() {
+        let gap = parseInt(maxVal.value) - parseInt(minVal.value);
+        }
 
-                slider.oninput = function() {
-                    const mid = this.value;
-                    const gradient = `linear-gradient(to right, #ff5722 0%, #ff5722 ${((mid - minRate) / (maxRate - minRate)) * 100}%, #f2f2f2 ${((mid - minRate) / (maxRate - minRate)) * 100}%, #f2f2f2 100%)`;
+        function setArea() {
+        range.style.left = `${
+            ((minVal.value - sliderMinValue) / (sliderMaxValue - sliderMinValue)) * 100
+        }%`;
 
-                    outputMin.innerHTML = this.value;
-                    outputMax.innerHTML = maxRate;
+        range.style.left = (minVal.value / sliderMaxValue) * 100 + "%";
+        minTooltip.style.left = (minVal.value / sliderMaxValue) * 100 + "%";
+        range.style.right = `${
+            100 -
+            ((maxVal.value - sliderMinValue) / (sliderMaxValue - sliderMinValue)) * 100
+        }%`;
+        maxTooltip.style.right = 100 - (maxVal.value / sliderMaxValue) * 100 + "%";
+        }
 
-                    this.style.background = gradient;
-                };
-            };
+        function setMinInput() {
+        let minPrice = parseInt(priceInputMin.value);
+        }
+
+        function setMaxInput() {
+        let maxPrice = parseInt(priceInputMax.value);
+        }
     </script>
 </head>
 <body>
@@ -86,13 +195,16 @@
 <div class="filter-bar">
     <!-- Filter form -->
     <form action="" method="GET">
-        <div class="range-container">
-            <div class="range-values">
-                <span>Min Hourly Rate: $<span id="minHourlyRate"></span></span>
-                <span>Max Hourly Rate: $<span id="maxHourlyRate"></span></span>
+        <div class="double-slider-box">
+            <h3 class="range-title">Price Range Slider</h3>
+            <div class="range-slider">
+
             </div>
-            <input type="range" name="hourly_rate" id="hourly_rate">
+            <div class="input-box">
+
+            </div>
         </div>
+
 
         <label for="distance">Filter by distance:</label>
         <select name="distance" id="distance">
