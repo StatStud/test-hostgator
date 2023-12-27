@@ -164,7 +164,5 @@
     ?>
 </div>
 
-<a href="#top" class="next-page">Next Page</a>
-
 </body>
 </html>
