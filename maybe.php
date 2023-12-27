@@ -102,15 +102,18 @@
             echo '</div>';
         }
 
-        // Pagination
+        // Pagination with preserved filters
         $sql = "SELECT COUNT(*) AS total FROM users";
+        if(isset($_GET['hourly_rate']) && !empty($_GET['hourly_rate'])) {
+            $sql .= " WHERE hourly_rate <= $hourly_rate";
+        }
         $result = $conn->query($sql);
         $row = $result->fetch_assoc();
         $total_pages = ceil($row['total'] / $results_per_page);
 
         echo '<div class="pagination">';
         for ($i = 1; $i <= $total_pages; $i++) {
-            echo '<a href="?page='.$i.'"';
+            echo '<a href="?page='.$i.'&hourly_rate=' . $_GET['hourly_rate'] . '"';
             if ($i == $current_page) {
                 echo ' class="active"';
             }
