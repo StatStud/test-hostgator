@@ -49,7 +49,7 @@
     <!-- Filter form -->
     <form action="" method="GET">
         <label for="hourly_rate">Filter by hourly_rate:</label>
-        <input type="number" username="hourly_rate" id="hourly_rate">
+        <input type="number" name="hourly_rate" id="hourly_rate">
         <!-- Other filter options go here -->
         <input type="submit" value="Filter">
     </form>
