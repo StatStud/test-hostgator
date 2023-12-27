@@ -60,6 +60,14 @@
     // Database connection and initial setup
     include 'config.php'; // Include the configuration file
 
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
     $results_per_page = 12; // Number of results per page
     $current_page = isset($_GET['page']) ? $_GET['page'] : 1; // Get the current page number, default is 1
 
