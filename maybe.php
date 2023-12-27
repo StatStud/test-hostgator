@@ -44,20 +44,7 @@
 
         @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
 
-        body {
-            height: 100vh;
-            display: grid;
-            background-color: #0b0f19;
-            place-items: center;
-            font-family: 'Poppins', sans-serif;
-        }
 
         .double-slider-box {
             background-color: #fff;
