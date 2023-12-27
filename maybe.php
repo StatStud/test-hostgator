@@ -60,10 +60,8 @@
     // Database connection and initial setup
     include 'config.php'; // Include the configuration file
 
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    $conn = new mysqli($servername, $username, $dbpassword, $dbname);
 
-    // Check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
