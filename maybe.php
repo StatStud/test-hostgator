@@ -42,171 +42,19 @@
             right: 20px;
         }
 
-        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
-
-
-        .double-slider-box {
-            background-color: #fff;
-            padding: 20px 40px;
-            border-radius: 10px;
-            max-width: 20rem;
-        }
-
-        h3.range-title {
-            margin-bottom: 4rem;
-        }
-
-        .range-slider {
-            position: relative;
-            width: 100%;
-            height: 5px;
-            margin: 30px 0;
-            background-color: #8a8a8a;
-        }
-
-        .slider-track {
-            height: 100%;
-            position: absolute;
-            background-color: #fe696a;
-        }
-
-        .range-slider input {
-            position: absolute;
-            width: 100%;
-            background: none;
-            pointer-events: none;
-            top: 50%;
-            transform: translateY(-50%);
-            appearance: none;
-        }
-
-        input[type="range"]::-webkit-slider-thumb {
-            height: 25px;
-            width: 25px;
-            border-radius: 50%;
-            border: 3px solid #FFF;
-            background: #FFF;
-            pointer-events: auto;
-            appearance: none;
-            cursor: pointer;
-            box-shadow: 0 .125rem .5625rem -0.125rem rgba(0, 0, 0, .25);
-        }
-
-        input[type="range"]::-moz-range-thumb {
-            height: 25px;
-            width: 25px;
-            border-radius: 50%;
-            border: 3px solid #FFF;
-            background: #FFF;
-            pointer-events: auto;
-            -moz-appearance: none;
-            cursor: pointer;
-            box-shadow: 0 .125rem .5625rem -0.125rem rgba(0, 0, 0, .25);
-        }
-
-
-        .input-box {
-            display: flex;
-        }
-
-        .min-box,
-        .max-box {
-            width: 50%;
-        }
-
-        .min-box {
-            padding-right: .5rem;
-            margin-right: .5rem;
-        }
-
-        .input-wrap {
-            position: relative;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: stretch;
-            width: 100%;
-        }
-
-        .double-slider {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 20px;
-        }
-
-        .double-slider input[type="range"] {
-            width: 80%;
-            margin-bottom: 20px;
-        }
-
-        .double-slider .input-box {
-            display: flex;
-            justify-content: space-between;
-            width: 80%;
-        }
-
-        .double-slider .input-box input {
-            width: 45px;
-            text-align: center;
-        }
     </style>
-
-    <script>
-        window.onload = function () {
-            const minVal = document.querySelector(".min-val");
-            const maxVal = document.querySelector(".max-val");
-            const sliderMinValue = parseInt(minVal.min);
-            const sliderMaxValue = parseInt(maxVal.max);
-            const range = document.querySelector(".slider-track");
-
-            // Update range input values on page load
-            updateSliderValues();
-
-            minVal.addEventListener("input", function () {
-                updateSliderValues();
-            });
-
-            maxVal.addEventListener("input", function () {
-                updateSliderValues();
-            });
-
-            function updateSliderValues() {
-                const minValue = parseInt(minVal.value);
-                const maxValue = parseInt(maxVal.value);
-
-                range.style.left = `${((minValue - sliderMinValue) / (sliderMaxValue - sliderMinValue)) * 100}%`;
-                range.style.right = `${100 - ((maxValue - sliderMinValue) / (sliderMaxValue - sliderMinValue)) * 100}%`;
-            }
-        };
-    </script>
 </head>
 <body>
+
 
 <div class="filter-bar">
     <!-- Filter form -->
     <form action="" method="GET">
-        <div class="double-slider">
-            <h3 class="range-title">Hourly Rate Range</h3>
-            <div class="range-slider">
-                <div class="slider-track"></div>
-                <input type="range" class="min-val" min="0" max="350" value="0">
-                <input type="range" class="max-val" min="0" max="350" value="350">
-            </div>
-            <div class="input-box">
-                <input type="text" class="min-input" readonly>
-                <input type="text" class="max-input" readonly>
-            </div>
-        </div>
+        <label for="hourly_rate">Filter by hourly_rate:</label>
+        <input type="number" name="hourly_rate" id="hourly_rate">
 
         <label for="distance">Filter by distance:</label>
-        <select name="distance" id="distance">
-            <option value="">Select Distance</option>
-            <option value="1">Within 1 mile</option>
-            <option value="5">Within 5 miles</option>
-            <option value="10">Within 10 miles</option>
-            <!-- Add more distance options as needed -->
-        </select>
+        <input type="number" name="distance" id="distance">
         
         <input type="submit" value="Filter">
     </form>
@@ -243,7 +91,7 @@
         // Hourly rate filter
         if(isset($_GET['hourly_rate']) && !empty($_GET['hourly_rate'])) {
             $hourly_rate = $_GET['hourly_rate'];
-            $sql .= " hourly_rate BETWEEN 0 AND $hourly_rate";
+            $sql .= " hourly_rate <= $hourly_rate";
         }
 
         // Distance filter
@@ -282,7 +130,7 @@
             // Hourly rate filter
             if(isset($_GET['hourly_rate']) && !empty($_GET['hourly_rate'])) {
                 $hourly_rate = $_GET['hourly_rate'];
-                $sql .= " hourly_rate BETWEEN 0 AND $hourly_rate";
+                $sql .= " hourly_rate <= $hourly_rate";
             }
 
             // Distance filter
