@@ -50,7 +50,10 @@
     <form action="" method="GET">
         <label for="hourly_rate">Filter by hourly_rate:</label>
         <input type="number" name="hourly_rate" id="hourly_rate">
-        <!-- Other filter options go here -->
+
+        <label for="distance">Filter by distance:</label>
+        <input type="number" name="distance" id="distance">
+        
         <input type="submit" value="Filter">
     </form>
 </div>
@@ -73,16 +76,31 @@
     $start_index = ($current_page - 1) * $results_per_page;
 
     // Set default sorting by 'last_login' when no filters are applied
-    $sort_by = isset($_GET['hourly_rate']) && !empty($_GET['hourly_rate']) ? 'hourly_rate' : 'last_login';
-    $order = $sort_by === 'last_login' ? 'DESC' : 'ASC';
+    $sort_by = 'last_login'; // Default sorting
+    $order = 'DESC'; // Default sorting order
 
     // Fetch users from the database
     $sql = "SELECT * FROM users";
 
     // Apply filters if provided
-    if(isset($_GET['hourly_rate']) && !empty($_GET['hourly_rate'])) {
-        $hourly_rate = $_GET['hourly_rate'];
-        $sql .= " WHERE hourly_rate <= $hourly_rate"; // Example: filtering users with hourly_rate less than or equal to the provided value
+    if((isset($_GET['hourly_rate']) && !empty($_GET['hourly_rate'])) || (isset($_GET['distance']) && !empty($_GET['distance']))) {
+        $sql .= " WHERE";
+
+        // Hourly rate filter
+        if(isset($_GET['hourly_rate']) && !empty($_GET['hourly_rate'])) {
+            $hourly_rate = $_GET['hourly_rate'];
+            $sql .= " hourly_rate <= $hourly_rate";
+        }
+
+        // Distance filter
+        if(isset($_GET['distance']) && !empty($_GET['distance'])) {
+            $distance = $_GET['distance'];
+            if(isset($_GET['hourly_rate']) && !empty($_GET['hourly_rate'])) {
+                $sql .= " AND distance <= $distance";
+            } else {
+                $sql .= " distance <= $distance";
+            }
+        }
     }
 
     $sql .= " ORDER BY $sort_by $order LIMIT $start_index, $results_per_page"; // Add ORDER BY clause
@@ -104,16 +122,33 @@
 
         // Pagination with preserved filters
         $sql = "SELECT COUNT(*) AS total FROM users";
-        if(isset($_GET['hourly_rate']) && !empty($_GET['hourly_rate'])) {
-            $sql .= " WHERE hourly_rate <= $hourly_rate";
+        if((isset($_GET['hourly_rate']) && !empty($_GET['hourly_rate'])) || (isset($_GET['distance']) && !empty($_GET['distance']))) {
+            $sql .= " WHERE";
+
+            // Hourly rate filter
+            if(isset($_GET['hourly_rate']) && !empty($_GET['hourly_rate'])) {
+                $hourly_rate = $_GET['hourly_rate'];
+                $sql .= " hourly_rate <= $hourly_rate";
+            }
+
+            // Distance filter
+            if(isset($_GET['distance']) && !empty($_GET['distance'])) {
+                $distance = $_GET['distance'];
+                if(isset($_GET['hourly_rate']) && !empty($_GET['hourly_rate'])) {
+                    $sql .= " AND distance <= $distance";
+                } else {
+                    $sql .= " distance <= $distance";
+                }
+            }
         }
+
         $result = $conn->query($sql);
         $row = $result->fetch_assoc();
         $total_pages = ceil($row['total'] / $results_per_page);
 
         echo '<div class="pagination">';
         for ($i = 1; $i <= $total_pages; $i++) {
-            echo '<a href="?page='.$i.'&hourly_rate=' . $_GET['hourly_rate'] . '"';
+            echo '<a href="?page='.$i.'&hourly_rate=' . $_GET['hourly_rate'] . '&distance=' . $_GET['distance'] . '"';
             if ($i == $current_page) {
                 echo ' class="active"';
             }
