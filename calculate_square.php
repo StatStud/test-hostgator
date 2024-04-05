@@ -1,13 +1,9 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get the number from the form
-    $number = $_POST["number"];
-    
-    // Execute the Python script to calculate the square
-    $output = shell_exec("python square.py $number");
-
-    // Print the result
-    //echo "<h2>The square of $number is $output</h2>";
+    // run_python_script.php
+    $num = $_GET['num']; // Get input number from AJAX request
+    $command = "python square.py $num";
+    $output = shell_exec($command);
     echo json_encode(array('result' => $output));
 }
 ?>
