@@ -7,6 +7,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $output = shell_exec("python square.py $number");
 
     // Print the result
-    echo "<h2>The square of $number is $output</h2>";
+    //echo "<h2>The square of $number is $output</h2>";
+    echo json_encode(array('result' => $output));
 }
 ?>
+

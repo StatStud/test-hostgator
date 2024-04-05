@@ -4,14 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Square Calculator</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <h1>Square Calculator</h1>
     <a href="index.php">return home</a>
-    <form action="calculate_square.php" method="post">
+    <label for="num">Enter a number:</label>
+    <input type="number" id="num" name="num">
+    <button onclick="calculateSquare()">Calculate</button>
+    <div id="result"></div>
+    <!-- <form action="calculate_square.php" method="post">
         <label for="number">Enter a number:</label>
         <input type="number" id="number" name="number" required>
         <input type="submit" value="Calculate">
-    </form>
+    </form> -->
+    <script>
+        function calculateSquare() {
+            var num = document.getElementById("num").value;
+            $.ajax({
+                type: "GET",
+                url: "calculate_square.php",
+                data: { num: num },
+                dataType: "json",
+                success: function(response) {
+                    $("#result").text("The square of " + num + " is " + response.result);
+                }
+            });
+        }
+    </script>
 </body>
 </html>
