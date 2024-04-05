@@ -160,9 +160,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <li><a href="#info">Info</a></li>
         </ul>
     </nav>
-<div>
-    Check out a new feature <a href="test.html">Here</a>
-</div>
 
   <div class="profile-container" style="margin-top: 75px">
     <div class="profile-picture">
@@ -173,6 +170,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <!-- Generic details -->
       <h2> Welcome, <?php echo $_SESSION['username']; ?></h2>
       <p>Email: user@example.com</p>
+      <div>
+    Check out a new feature <a href="test.html">Here</a>
+    </div>
       <!-- Add more generic details here -->
     </div>
     <div class="advanced-settings" style="margin: 20px;">
