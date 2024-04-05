@@ -160,7 +160,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <li><a href="#info">Info</a></li>
         </ul>
     </nav>
-
+<div>
+    Check out a new feature <a href="test.html">Here</a>
+</div>
 
   <div class="profile-container" style="margin-top: 75px">
     <div class="profile-picture">
