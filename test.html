@@ -23,6 +23,7 @@
     <script>
         function calculateSquare() {
             var num = document.getElementById("num").value;
+            $("#result").text("Calculating..."); // Print message indicating calculation is in progress
             $.ajax({
                 type: "GET",
                 url: "calculate_square.php",
